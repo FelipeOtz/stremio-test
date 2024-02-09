@@ -41,9 +41,9 @@ RUN ./setup_jellyfin_repo.sh
 RUN apt install -y jellyfin-ffmpeg=$JELLYFIN_VERSION-$(awk -F'=' '/^VERSION_CODENAME=/{ print $NF }' /etc/os-release)
 
 # RUN apt install -y bash
-COPY download_server.sh download_server.sh
+#COPY download_server.sh download_server.sh
 # RUN /bin/bash -c download_server.sh
-RUN ./download_server.sh
+#RUN ./download_server.sh
 
 # This copy could will override the server.js that was downloaded with the one provided in this folder
 # for custom or manual builds if $VERSION argument is not empty.
